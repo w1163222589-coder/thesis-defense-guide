@@ -1,0 +1,4 @@
+interface:
+  display_name: "Thesis Defense Guide"
+  short_description: "Prepare evidence-aware thesis defense Q&A guides."
+  default_prompt: "Create a committee-by-committee thesis defense preparation guide. Require my thesis or defense materials, the evaluator list, and the specific school/university context before researching or drafting. Adapt the questions to my defense stage, avoid overclaiming beyond my thesis evidence, and include a thesis risk radar, claim calibration table, evaluator-thesis mapping matrix, likely questions, chain follow-ups, 10/30/60-second oral answers, personalized red-line phrases, and a polished Word document."
