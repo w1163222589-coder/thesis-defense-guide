@@ -235,27 +235,23 @@ Thesis Defense Q&A Guide
 
 ## 示例效果
 
-下面的截图来自一份已匿名化处理的真实答辩准备手册 PDF 渲染，展示这个 Skill 希望生成的手册效果。
+下面的示例图基于一份已匿名化处理的真实答辩准备手册制作。这里不再整页铺大图，而是裁切关键区域，并用标注说明每个模块的作用。
 
 <table>
   <tr>
     <td align="center" width="50%">
-      <strong>手册封面</strong><br>
-      <img src="assets/screenshots/manual-cover-anon.png" alt="匿名化答辩手册封面" width="360">
+      <strong>评委针对性 Q&A 结构</strong><br>
+      <img src="assets/screenshots/preview-evaluator-qa-annotated.png" alt="带标注的评委针对性 Q&A 示例图" width="520">
     </td>
     <td align="center" width="50%">
-      <strong>评委画像与针对性 Q&A</strong><br>
-      <img src="assets/screenshots/manual-evaluator-profile-anon.png" alt="匿名化评委画像与针对性 Q&A 页面" width="360">
+      <strong>通用问题包</strong><br>
+      <img src="assets/screenshots/preview-universal-questions-crop.png" alt="裁切后的通用问题示例图" width="520">
     </td>
   </tr>
   <tr>
-    <td align="center" width="50%">
-      <strong>通用高频问题</strong><br>
-      <img src="assets/screenshots/manual-universal-qa-anon.png" alt="匿名化通用高频问题页面" width="360">
-    </td>
-    <td align="center" width="50%">
+    <td align="center" colspan="2">
       <strong>高风险专项附录</strong><br>
-      <img src="assets/screenshots/manual-risk-appendix-anon.png" alt="匿名化高风险专项附录页面" width="360">
+      <img src="assets/screenshots/preview-risk-appendix-annotated.png" alt="带标注的高风险专项附录示例图" width="720">
     </td>
   </tr>
 </table>
