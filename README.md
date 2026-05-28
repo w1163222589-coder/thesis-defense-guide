@@ -2,10 +2,10 @@
 
 # Thesis Defense Guide
 
-### Committee-Aware Thesis Defense Preparation for Codex
+### Thesis Defense Q&A Prep Skill
 
-[![Skill](https://img.shields.io/badge/type-Codex%20Skill-blue.svg)](https://developers.openai.com/codex/skills)
-[![Platform](https://img.shields.io/badge/platform-Codex-lightgrey.svg)](#compatibility)
+[![Skill](https://img.shields.io/badge/type-Agent%20Skill-blue.svg)](https://agentskills.io)
+[![Platform](https://img.shields.io/badge/platform-Codex%20%7C%20Claude%20Code-lightgrey.svg)](#compatibility)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
 [![Output](https://img.shields.io/badge/output-Markdown%20%7C%20DOCX-orange.svg)](#word-output)
 
@@ -36,7 +36,7 @@ Common preparation methods leave big gaps:
 
 ## The Solution
 
-This skill teaches Codex to build a **committee-by-committee defense preparation manual**.
+This skill teaches an AI coding agent to build a **committee-by-committee defense preparation manual**.
 
 It reads your thesis or slides, researches public committee information, maps each evaluator's likely concerns to your work, and produces answers that are direct, bounded, and speakable under real defense pressure.
 
@@ -70,7 +70,7 @@ The skill follows a structured workflow from intake to final rehearsal document:
 
 ### Phase 1: Thesis Intake & Risk Reading
 
-Codex reads the thesis, dissertation, slides, proposal, or draft materials and extracts the defense-critical parts:
+The agent reads the thesis, dissertation, slides, proposal, or draft materials and extracts the defense-critical parts:
 
 - research problem and thesis title
 - claimed contributions
@@ -83,7 +83,7 @@ Codex reads the thesis, dissertation, slides, proposal, or draft materials and e
 
 ### Phase 2: Committee Research & Mapping
 
-Codex researches each evaluator from public sources, prioritizing official profiles, lab pages, publications, and institutional pages.
+The agent researches each evaluator from public sources, prioritizing official profiles, lab pages, publications, and institutional pages.
 
 It separates:
 
@@ -95,7 +95,7 @@ It separates:
 
 ### Phase 3: Defense Manual Generation
 
-Codex writes a rehearsal-ready manual organized by evaluator.
+The agent writes a rehearsal-ready manual organized by evaluator.
 
 Each evaluator section includes:
 
@@ -179,7 +179,7 @@ Accepted materials include PDF, DOCX, PPTX, Markdown, plain text, or a folder co
 
 ### Usage
 
-In Codex, ask:
+In Codex or another compatible agent, ask:
 
 ```text
 Use $thesis-defense-guide to create a defense preparation manual.
@@ -240,24 +240,23 @@ Thesis Defense Q&A Guide
 
 The annotated previews below are built from an anonymized real defense-preparation manual. Instead of showing full pages, they crop the useful areas and call out the parts that matter.
 
-<table>
-  <tr>
-    <td align="center" width="50%">
-      <strong>Evaluator-Specific Q&A Anatomy</strong><br>
-      <img src="assets/screenshots/preview-evaluator-qa-annotated.png" alt="Annotated evaluator-specific Q&A preview" width="520">
-    </td>
-    <td align="center" width="50%">
-      <strong>Universal Question Pack</strong><br>
-      <img src="assets/screenshots/preview-universal-questions-crop.png" alt="Cropped universal defense question preview" width="520">
-    </td>
-  </tr>
-  <tr>
-    <td align="center" colspan="2">
-      <strong>High-Risk Appendix</strong><br>
-      <img src="assets/screenshots/preview-risk-appendix-annotated.png" alt="Annotated high-risk appendix preview" width="720">
-    </td>
-  </tr>
-</table>
+### Evaluator-Specific Q&A Anatomy
+
+<p align="center">
+  <img src="assets/screenshots/preview-evaluator-qa-annotated.png" alt="Annotated evaluator-specific Q&A preview" width="780">
+</p>
+
+### Universal Question Pack
+
+<p align="center">
+  <img src="assets/screenshots/preview-universal-questions-crop.png" alt="Cropped universal defense question preview" width="780">
+</p>
+
+### High-Risk Appendix
+
+<p align="center">
+  <img src="assets/screenshots/preview-risk-appendix-annotated.png" alt="Annotated high-risk appendix preview" width="780">
+</p>
 
 ## Word Output
 
@@ -311,7 +310,8 @@ Overclaiming is one of the easiest ways to lose credibility. A careful answer th
 
 | Platform | Status | Notes |
 |----------|--------|-------|
-| OpenAI Codex | Fully supported | Primary target. Uses local file tools, web research, and bundled DOCX converter |
+| OpenAI Codex | Fully supported | Primary development target. Uses local file tools, web research, and bundled DOCX converter |
+| Claude Code | Compatible | The workflow is agent-readable and can be adapted with equivalent file, research, and Python tooling |
 | Other AI agents | Adaptable | Any agent that can read files, browse public sources, and run Python can adapt the workflow |
 
 ## Project Layout
@@ -349,6 +349,6 @@ MIT
 
 ## Acknowledgments
 
-- [OpenAI Codex](https://openai.com/codex/) — the AI coding agent platform this skill targets
+- [OpenAI Codex](https://openai.com/codex/) — the AI coding agent platform used to build and test this skill
 - [Agent Skills](https://agentskills.io) — the open standard for packaging reusable agent capabilities
 - Real thesis defense pressure — the reason this skill exists

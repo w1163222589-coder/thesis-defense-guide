@@ -2,10 +2,10 @@
 
 # Thesis Defense Guide
 
-### 面向 Codex 的论文答辩委员会 Q&A 备战 Skill
+### 毕业论文答辩 Q&A 备战 Skill
 
-[![Skill](https://img.shields.io/badge/type-Codex%20Skill-blue.svg)](https://developers.openai.com/codex/skills)
-[![Platform](https://img.shields.io/badge/platform-Codex-lightgrey.svg)](#兼容性)
+[![Skill](https://img.shields.io/badge/type-Agent%20Skill-blue.svg)](https://agentskills.io)
+[![Platform](https://img.shields.io/badge/platform-Codex%20%7C%20Claude%20Code-lightgrey.svg)](#兼容性)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
 [![Output](https://img.shields.io/badge/output-Markdown%20%7C%20DOCX-orange.svg)](#word-输出)
 
@@ -36,7 +36,7 @@
 
 ## 解决方案
 
-这个 Skill 会让 Codex 生成一份**按答辩委员逐个组织的答辩备战手册**。
+这个 Skill 会让 AI Agent 生成一份**按答辩委员逐个组织的答辩备战手册**。
 
 它会读取你的论文或 PPT，调研评委公开资料，把每位老师的研究兴趣映射到你的论文内容上，然后生成能在现场说出口、边界清晰、不会过度承诺的答辩回答。
 
@@ -69,7 +69,7 @@ Skill 按照一个从材料读取到最终演练手册的结构化流程执行�
 
 ### Phase 1：论文读取与风险识别
 
-Codex 会读取论文、学位论文、答辩 PPT、开题报告或草稿材料，提取答辩最关键的内容：
+AI Agent 会读取论文、学位论文、答辩 PPT、开题报告或草稿材料，提取答辩最关键的内容：
 
 - 研究问题和论文题目
 - 主要创新点
@@ -82,7 +82,7 @@ Codex 会读取论文、学位论文、答辩 PPT、开题报告或草稿材料�
 
 ### Phase 2：评委调研与论文映射
 
-Codex 会优先使用公开资料调研每位评委，包括官方主页、实验室页面、论文、机构页面等。
+AI Agent 会优先使用公开资料调研每位评委，包括官方主页、实验室页面、论文、机构页面等。
 
 它会区分：
 
@@ -94,7 +94,7 @@ Codex 会优先使用公开资料调研每位评委，包括官方主页、实�
 
 ### Phase 3：答辩手册生成
 
-Codex 会生成一份按评委组织、可以直接演练的答辩手册。
+AI Agent 会生成一份按评委组织、可以直接演练的答辩手册。
 
 每位评委通常包括：
 
@@ -150,7 +150,7 @@ Codex 会生成一份按评委组织、可以直接演练的答辩手册。
 git clone https://github.com/w1163222589-coder/thesis-defense-guide.git
 ```
 
-把 skill 文件夹复制到 Codex skills 目录：
+如果在 Codex 中使用，把 skill 文件夹复制到 Codex skills 目录：
 
 ```bash
 cp -r thesis-defense-guide ~/.codex/skills/
@@ -162,7 +162,7 @@ Windows 通常是：
 C:\Users\<USER>\.codex\skills\thesis-defense-guide
 ```
 
-安装后重启 Codex。
+安装后重启 Codex。Claude Code 等兼容 Agent 也可以直接把这个仓库作为项目上下文或自定义指令目录引用。
 
 也可以通过 CC Switch 安装：Skills 面板 → Add from GitHub → 粘贴仓库 URL。
 
@@ -178,7 +178,7 @@ C:\Users\<USER>\.codex\skills\thesis-defense-guide
 
 ### 使用示例
 
-在 Codex 中可以这样说：
+在 Codex 或其他兼容 Agent 中可以这样说：
 
 ```text
 使用 $thesis-defense-guide 帮我生成一份答辩准备手册。
@@ -237,24 +237,23 @@ Thesis Defense Q&A Guide
 
 下面的示例图基于一份已匿名化处理的真实答辩准备手册制作。这里不再整页铺大图，而是裁切关键区域，并用标注说明每个模块的作用。
 
-<table>
-  <tr>
-    <td align="center" width="50%">
-      <strong>评委针对性 Q&A 结构</strong><br>
-      <img src="assets/screenshots/preview-evaluator-qa-annotated.png" alt="带标注的评委针对性 Q&A 示例图" width="520">
-    </td>
-    <td align="center" width="50%">
-      <strong>通用问题包</strong><br>
-      <img src="assets/screenshots/preview-universal-questions-crop.png" alt="裁切后的通用问题示例图" width="520">
-    </td>
-  </tr>
-  <tr>
-    <td align="center" colspan="2">
-      <strong>高风险专项附录</strong><br>
-      <img src="assets/screenshots/preview-risk-appendix-annotated.png" alt="带标注的高风险专项附录示例图" width="720">
-    </td>
-  </tr>
-</table>
+### 评委针对性 Q&A 结构
+
+<p align="center">
+  <img src="assets/screenshots/preview-zh-evaluator-qa-annotated.png" alt="中文标注的评委针对性 Q&A 示例图" width="780">
+</p>
+
+### 通用问题包
+
+<p align="center">
+  <img src="assets/screenshots/preview-zh-universal-questions-crop.png" alt="中文标注的通用问题包示例图" width="780">
+</p>
+
+### 高风险专项附录
+
+<p align="center">
+  <img src="assets/screenshots/preview-zh-risk-appendix-annotated.png" alt="中文标注的高风险专项附录示例图" width="780">
+</p>
 
 ## Word 输出
 
@@ -308,7 +307,8 @@ python scripts/markdown_to_docx.py \
 
 | 平台 | 状态 | 说明 |
 |------|------|------|
-| OpenAI Codex | 完全支持 | 主要目标平台，使用本地文件工具、公开资料调研和内置 DOCX 转换器 |
+| OpenAI Codex | 完全支持 | 主要开发和测试平台，使用本地文件工具、公开资料调研和内置 DOCX 转换器 |
+| Claude Code | 兼容 | 这个流程是 Agent 可读的，可用等价的文件、调研和 Python 工具适配 |
 | 其他 AI Agent | 可适配 | 只要能读取文件、浏览公开资料并运行 Python，就可以适配这个流程 |
 
 ## 项目结构
@@ -348,6 +348,6 @@ MIT
 
 ## 致谢
 
-- [OpenAI Codex](https://openai.com/codex/) — 本 Skill 面向的 AI 编码代理平台
+- [OpenAI Codex](https://openai.com/codex/) — 用于构建和测试本 Skill 的 AI 编码代理平台
 - [Agent Skills](https://agentskills.io) — 可复用 Agent 能力的开放标准
 - 真实论文答辩压力 — 这个 Skill 存在的原因
