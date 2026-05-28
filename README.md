@@ -240,21 +240,28 @@ Thesis Defense Q&A Guide
 
 The screenshots below are rendered from an anonymized real defense-preparation manual generated in this style. They show the kind of polished, committee-specific document this skill is designed to produce.
 
-### Manual Cover
-
-![Defense manual cover](assets/screenshots/manual-cover.png)
-
-### Evaluator-Specific Q&A
-
-![Evaluator-specific Q&A page](assets/screenshots/manual-evaluator-profile.png)
-
-### Universal Questions
-
-![Universal defense questions](assets/screenshots/manual-universal-qa.png)
-
-### High-Risk Appendix
-
-![High-risk appendix page](assets/screenshots/manual-risk-appendix.png)
+<table>
+  <tr>
+    <td align="center" width="50%">
+      <strong>Manual Cover</strong><br>
+      <img src="assets/screenshots/manual-cover-anon.png" alt="Anonymized defense manual cover" width="360">
+    </td>
+    <td align="center" width="50%">
+      <strong>Evaluator-Specific Q&A</strong><br>
+      <img src="assets/screenshots/manual-evaluator-profile-anon.png" alt="Anonymized evaluator-specific Q&A page" width="360">
+    </td>
+  </tr>
+  <tr>
+    <td align="center" width="50%">
+      <strong>Universal Questions</strong><br>
+      <img src="assets/screenshots/manual-universal-qa-anon.png" alt="Anonymized universal defense questions page" width="360">
+    </td>
+    <td align="center" width="50%">
+      <strong>High-Risk Appendix</strong><br>
+      <img src="assets/screenshots/manual-risk-appendix-anon.png" alt="Anonymized high-risk appendix page" width="360">
+    </td>
+  </tr>
+</table>
 
 ## Word Output
 

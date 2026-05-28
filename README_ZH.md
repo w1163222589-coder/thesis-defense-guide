@@ -237,21 +237,28 @@ Thesis Defense Q&A Guide
 
 下面的截图来自一份已匿名化处理的真实答辩准备手册 PDF 渲染，展示这个 Skill 希望生成的手册效果。
 
-### 手册封面
-
-![答辩手册封面](assets/screenshots/manual-cover.png)
-
-### 评委画像与针对性 Q&A
-
-![评委画像与针对性 Q&A](assets/screenshots/manual-evaluator-profile.png)
-
-### 通用高频问题
-
-![通用高频问题](assets/screenshots/manual-universal-qa.png)
-
-### 高风险专项附录
-
-![高风险专项附录](assets/screenshots/manual-risk-appendix.png)
+<table>
+  <tr>
+    <td align="center" width="50%">
+      <strong>手册封面</strong><br>
+      <img src="assets/screenshots/manual-cover-anon.png" alt="匿名化答辩手册封面" width="360">
+    </td>
+    <td align="center" width="50%">
+      <strong>评委画像与针对性 Q&A</strong><br>
+      <img src="assets/screenshots/manual-evaluator-profile-anon.png" alt="匿名化评委画像与针对性 Q&A 页面" width="360">
+    </td>
+  </tr>
+  <tr>
+    <td align="center" width="50%">
+      <strong>通用高频问题</strong><br>
+      <img src="assets/screenshots/manual-universal-qa-anon.png" alt="匿名化通用高频问题页面" width="360">
+    </td>
+    <td align="center" width="50%">
+      <strong>高风险专项附录</strong><br>
+      <img src="assets/screenshots/manual-risk-appendix-anon.png" alt="匿名化高风险专项附录页面" width="360">
+    </td>
+  </tr>
+</table>
 
 ## Word 输出
 
