@@ -1,0 +1,62 @@
+<svg viewBox="0 0 1000 640" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="ot od" font-family="-apple-system, 'Segoe UI', Arial, sans-serif">
+<title id="ot">Day-of one-pager mockup</title>
+<desc id="od">A sample of the default deliverable: a readiness score of 61 out of 100 (major exposure), top three exposures, a Top-10 dangerous-questions list with severity tags, and must-say concession lines.</desc>
+<rect width="1000" height="640" rx="10" fill="#13284b"/>
+<rect x="36" y="28" width="928" height="584" rx="12" fill="#f6f1e7" stroke="#c8a85a" stroke-width="1.5"/>
+
+<!-- header -->
+<text x="68" y="74" font-size="13" letter-spacing="2.5" fill="#9a7b3a">DEFENSE PREP · DAY-OF ONE-PAGER</text>
+<text x="68" y="108" font-size="28" font-weight="600" font-family="Georgia, 'Times New Roman', serif" fill="#13284b">Readiness &amp; Top Risks</text>
+
+<!-- readiness ring -->
+<circle cx="858" cy="108" r="46" fill="none" stroke="#e2d7bf" stroke-width="10"/>
+<circle cx="858" cy="108" r="46" fill="none" stroke="#c8a85a" stroke-width="10" stroke-linecap="round" stroke-dasharray="176 289" transform="rotate(-90 858 108)"/>
+<text x="858" y="106" text-anchor="middle" font-size="30" font-weight="700" font-family="Georgia, serif" fill="#13284b">61</text>
+<text x="858" y="126" text-anchor="middle" font-size="12" fill="#6b6048">/ 100</text>
+<text x="858" y="178" text-anchor="middle" font-size="13" font-weight="600" fill="#b8862f">Major exposure</text>
+
+<line x1="68" y1="150" x2="760" y2="150" stroke="#d8ccb0" stroke-width="1.4"/>
+
+<!-- top-3 exposures -->
+<text x="68" y="196" font-size="16" font-weight="700" fill="#13284b">Top-3 exposures</text>
+<g font-size="14" fill="#13284b">
+<rect x="68" y="210" width="214" height="34" rx="17" fill="#ece0c4"/>
+<text x="175" y="232" text-anchor="middle">① Evidence–claim gap</text>
+<rect x="296" y="210" width="186" height="34" rx="17" fill="#ece0c4"/>
+<text x="389" y="232" text-anchor="middle">② Scope overreach</text>
+<rect x="496" y="210" width="170" height="34" rx="17" fill="#ece0c4"/>
+<text x="581" y="232" text-anchor="middle">③ Method rigor</text>
+</g>
+
+<!-- top-10 -->
+<text x="68" y="296" font-size="16" font-weight="700" fill="#13284b">Top-10 dangerous questions</text>
+<g>
+<!-- row template: badge + text + severity pill -->
+<rect x="68" y="312" width="36" height="26" rx="6" fill="#13284b"/><text x="86" y="330" text-anchor="middle" font-size="14" font-weight="700" fill="#f4efe6">Q1</text>
+<text x="118" y="330" font-size="15" fill="#2a2a2a">State the boundary of your central claim</text>
+<rect x="800" y="312" width="92" height="26" rx="13" fill="#9a3b3b"/><text x="846" y="330" text-anchor="middle" font-size="11" font-weight="700" letter-spacing="1" fill="#f6f1e7">CRITICAL</text>
+
+<rect x="68" y="352" width="36" height="26" rx="6" fill="#13284b"/><text x="86" y="370" text-anchor="middle" font-size="14" font-weight="700" fill="#f4efe6">Q2</text>
+<text x="118" y="370" font-size="15" fill="#2a2a2a">Why this method / source over the obvious alternative?</text>
+<rect x="820" y="352" width="72" height="26" rx="13" fill="#b8862f"/><text x="856" y="370" text-anchor="middle" font-size="11" font-weight="700" letter-spacing="1" fill="#f6f1e7">MAJOR</text>
+
+<rect x="68" y="392" width="36" height="26" rx="6" fill="#13284b"/><text x="86" y="410" text-anchor="middle" font-size="14" font-weight="700" fill="#f4efe6">Q3</text>
+<text x="118" y="410" font-size="15" fill="#2a2a2a">How does your evidence actually support the conclusion?</text>
+<rect x="800" y="392" width="92" height="26" rx="13" fill="#9a3b3b"/><text x="846" y="410" text-anchor="middle" font-size="11" font-weight="700" letter-spacing="1" fill="#f6f1e7">CRITICAL</text>
+
+<rect x="68" y="432" width="36" height="26" rx="6" fill="#13284b"/><text x="86" y="450" text-anchor="middle" font-size="14" font-weight="700" fill="#f4efe6">Q4</text>
+<text x="118" y="450" font-size="15" fill="#2a2a2a">What is your single biggest limitation?</text>
+<rect x="820" y="432" width="72" height="26" rx="13" fill="#b8862f"/><text x="856" y="450" text-anchor="middle" font-size="11" font-weight="700" letter-spacing="1" fill="#f6f1e7">MAJOR</text>
+
+<text x="118" y="480" font-size="13.5" font-style="italic" fill="#7a7058">… 6 more, ranked by danger</text>
+</g>
+
+<line x1="68" y1="500" x2="892" y2="500" stroke="#d8ccb0" stroke-width="1.4"/>
+
+<!-- concession lines -->
+<text x="68" y="532" font-size="16" font-weight="700" fill="#13284b">Must-say concession lines</text>
+<g font-size="14.5" fill="#2a2a2a">
+<text x="68" y="562" font-size="15" fill="#9a7b3a">✓</text><text x="90" y="562">Within [scope] the result holds; beyond it, the next step is …</text>
+<text x="68" y="588" font-size="15" fill="#9a7b3a">✓</text><text x="90" y="588">This is a real limitation — here's what the evidence still supports.</text>
+</g>
+</svg>

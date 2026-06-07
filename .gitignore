@@ -3,3 +3,11 @@ __pycache__/
 *.tmp
 *.log
 dist/
+
+# scratch / working artifacts — not part of the published skill (privacy: dry-runs contain real people)
+答辩压题与模拟_*.md
+Thesis-Defense-Guide_改进分析与路线图.md
+SKILL.original-*.md
+
+# stale v0.1.x preview screenshots — README no longer references them; regenerate for v0.5.0 before re-adding
+assets/screenshots/

@@ -183,15 +183,7 @@ Evidence notes:
 
 ## Answer Patterns
 
-Use these patterns for high-pressure answers:
-
-- "In this thesis, I limit the conclusion to..."
-- "This is a valid limitation. The current work assumes..."
-- "The contribution here is not a complete engineering system, but..."
-- "A stricter evaluation would require..."
-- "I would not claim this proves..., only that it shows..."
-- "If we extend this work, the first thing I would verify is..."
-- "My answer is yes under the thesis assumptions, but not yet under unrestricted real-world conditions."
+The 4-move answer skeleton, layered 10/30/60-second answers, stance-by-severity, and the claim-calibration table are **canonical in `answer-coaching-framework.md`**. Draft answers there; this file only fixes where they sit in the manual.
 
 ## Preferred Chinese Labels
 
@@ -215,15 +207,12 @@ When writing a Chinese manual, prefer these labels because the Word converter hi
 
 ## Red-Line Phrases To Avoid
 
-Replace generic red lines with thesis-specific versions whenever possible.
+Replace generic red lines with thesis-specific versions whenever possible (the method + a thesis-specific table live in `answer-coaching-framework.md`). Examples span paradigms — use the ones that fit the work:
 
-- "This method definitely works in real systems."
-- "The signal cannot be intercepted."
-- "The optimization always finds the global optimum."
-- "The selected geometry is optimal."
-- "Simulation should match measurement."
-- "The experiment proves the method is universally effective."
+- "This definitely works / holds in all cases."
+- "This proves my conclusion." (when the evidence only supports it within a boundary)
 - "This limitation does not affect the conclusion at all."
-- "This has already been validated in real scenarios." when only simulation or offline tests are available.
-- "The method is optimal." when the thesis only reports a heuristic, local optimum, or empirical best case.
 - "Future work will solve this." as a substitute for answering the current limitation.
+- *Empirical:* "This is already validated in real scenarios." when only simulation or offline tests exist; "The method is optimal." when only a heuristic or empirical best case is shown.
+- *Interpretive / historical:* "The sources clearly show…" when the reading is contested or the archive is mixed.
+- *Legal / normative:* "This is settled / obviously right." when the authority or premise is contestable.

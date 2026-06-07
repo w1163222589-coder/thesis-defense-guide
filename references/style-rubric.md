@@ -1,159 +1,47 @@
 # Defense Guide Style Rubric
 
-Use this rubric to make new manuals practical, organized, evidence-aware, and easy to rehearse.
+Style, tone, and Word-layout for the **Tier-E full manual**. The *methodology* (how to find weaknesses, generate questions, coach answers, score readiness) now lives in dedicated framework files — this rubric only governs how the finished manual reads and looks.
 
-## Must-Have Structure
+> Methodology moved out (read those for the "how"): weakness audit → `weakness-audit-framework.md`; questions & stage-awareness → `question-generation-rules.md`; answers, 4-move, layering, anti-overclaim, claim calibration → `answer-coaching-framework.md`; evidence grading → `evaluator-research-protocol.md`; readiness → `readiness-rubric.md`; paradigm lens → `discipline-profiles.md`.
 
-1. Cover or opening metadata:
-   - manual title,
-   - thesis title,
-   - committee list,
-   - institution/program context,
-   - defense stage and language when known.
-2. Background and usage instructions:
-   - explain why the committee may challenge the student,
-   - name any cross-team, cross-field, or external-examiner risk,
-   - give a concise defense strategy,
-   - state the assumed defense stage if the user did not provide one.
-3. Thesis-level preparation:
-   - defense stage strategy,
-   - thesis fact sheet,
-   - thesis risk radar,
-   - claim calibration table,
-   - evaluator-thesis mapping matrix.
-4. One major section per evaluator:
-   - name/title,
-   - core research direction,
-   - representative work,
-   - student thesis/student publication themes if publicly found,
-   - evidence notes and evidence strength,
-   - potential concern callout.
-5. Question blocks:
-   - question heading,
-   - question intent,
-   - 10-second answer for fast replies when useful,
-   - 30-second answer for the normal oral answer,
-   - 60-second answer for complex or high-risk questions,
-   - bonus point,
-   - follow-up handling.
-6. A closing section:
-   - personalized red-line phrases,
-   - safer replacement wording,
-   - final "if cornered" answer,
-   - 30-second summary,
-   - one-page rehearsal sheet.
+---
+
+## Must-Have Structure (output checklist)
+
+1. **Cover / opening metadata:** manual title, thesis title, committee list, institution/program, defense stage + language, detected paradigm.
+2. **Background & usage:** why the committee may challenge the student; any cross-field / external-examiner / identity risk; a concise defense strategy; the assumed stage if not given.
+3. **Thesis-level prep (the tables):** defense-stage strategy, thesis fact sheet, weakness ledger / risk radar, claim calibration table, evaluator-thesis mapping matrix, readiness score.
+4. **One section per evaluator:** name/title, core direction, representative work, student themes (if publicly found), evidence strength, `【潜在关切点】` callout, signature questions.
+5. **Question blocks:** heading, intent, 10/30/60-second answers (as useful), bonus point, follow-up handling.
+6. **Closing:** personalized red-line phrases, safer wording, final "if cornered" answer, 30-second summary, one-page rehearsal sheet.
+
+Ship risk-first (see SKILL.md "Output organization"): the day-of one-pager and Top-10 lead; this full structure is Tier E.
+
+---
 
 ## Tone
 
-- Write in the student's spoken defense voice.
-- Use firm but limited claims.
-- Prefer "this thesis focuses on..." over "this fully solves...".
-- Make limitations sound controlled, not accidental.
-- When a committee member is an expert in a neighboring field, acknowledge that field before defending the thesis scope.
-- Avoid sounding like a literature review unless the paragraph is explicitly a profile or evidence note.
-- Never flatter the thesis by inflating weak evidence. Make the student sound careful, not evasive.
+- Write in the student's **spoken defense voice**, not thesis prose.
+- Firm but **bounded** claims. Prefer "this thesis focuses on…" over "this fully solves…".
+- Make limitations sound **controlled**, not accidental.
+- When a committee member is an expert in a neighboring field, **acknowledge that field** before defending scope.
+- Don't read like a literature review unless the paragraph is explicitly a profile/evidence note.
+- Never flatter the thesis by inflating weak evidence — sound **careful, not evasive**.
+- Match the paradigm's idiom (econometric, doctrinal, interpretive, etc.); don't import one field's jargon into another.
 
-## Defense Stage Differences
-
-Adjust the manual to the actual stage:
-
-- Proposal defense: focus on topic value, research gap, feasibility, technical route, expected validation, and scope control. Do not write as if results already exist.
-- Midterm defense: focus on progress, completed evidence, unfinished work, schedule risk, method changes, and whether the remaining plan is realistic.
-- Pre-defense: focus on thesis structure, contribution clarity, missing baselines or ablations, wording of claims, format issues, and revision priorities.
-- Final defense / viva: focus on evidence credibility, contribution boundary, academic rigor, reproducibility, limitations, and generalization.
-- Written committee review: focus on argument traceability, source evidence, compliance, revision responses, and objections that need written replies.
-
-If the stage is unknown, use final defense/viva assumptions and explicitly label that assumption.
-
-## Evidence Discipline
-
-- Separate official facts, publication-pattern inference, and weak field-adjacent inference.
-- Use "confirmed", "suggests", and "may" deliberately.
-- Never claim a person supervised a student thesis unless the source supports that relationship.
-- If no student outputs are found publicly, say that and continue with paper/project themes.
-- Put source links in the guide or appendix when public sources are used.
-
-## Anti-Overclaiming Discipline
-
-- Do not present simulations as real-world deployment evidence.
-- Do not present correlation, trend, or a single case observation as causality.
-- Do not present a small, local, or narrow experiment as universal effectiveness.
-- Do not present a planned extension, future work, or expected experiment as a completed contribution.
-- Do not hide missing baselines, missing ablations, limited datasets, unverified assumptions, or negative results.
-- Do not use absolute language unless the thesis evidence truly supports it.
-- When evidence is weak, use a controlled concession: acknowledge the limit, state the thesis boundary, defend what the current evidence actually supports, and name the next validation step.
-- Include safer wording for risky thesis claims in the claim calibration table or red-line phrases section.
-
-## Good Question Design
-
-Each evaluator's questions should include:
-
-- one question from their core research direction,
-- one question about the thesis's assumptions,
-- one question about experiment/simulation validity,
-- one question about engineering feasibility or real-world deployment,
-- one question about contribution boundary or novelty,
-- one chain of follow-ups that gets progressively harder.
-
-Questions should reflect the defense stage. A proposal question should challenge feasibility or design; a final defense question should challenge evidence, novelty, and conclusion boundaries.
-
-The follow-up chain should usually move through:
-
-1. Concept check.
-2. Assumption challenge.
-3. Evidence or experiment challenge.
-4. Limitation pressure.
-5. Future-work, feasibility, or generalization challenge.
-
-## Answer Quality
-
-A good answer has four moves:
-
-1. Directly answer the question.
-2. State the thesis boundary.
-3. Explain why the current work is still valid.
-4. Give the next-step extension.
-
-Example skeleton:
-
-> This is a valid limitation. In this thesis, I assume ... because the goal is first to verify .... Under that scope, the result shows .... For a real system, the next step would be ....
-
-For high-risk questions, provide layered answers:
-
-- 10-second answer: one controlled sentence.
-- 30-second answer: the answer the student should rehearse first.
-- 60-second answer: deeper explanation with limitation and next step.
-- If interrupted: one fallback sentence that preserves the thesis boundary.
-
-## Risk Radar Quality
-
-The risk radar is good when it:
-
-- names the vulnerable claim plainly,
-- ties the risk to actual thesis evidence or missing evidence,
-- assigns likely evaluator pressure without over-personalizing,
-- chooses a safe stance: defend, qualify, concede, or redirect,
-- gives wording the student can actually say.
-
-## Claim Calibration Quality
-
-The claim calibration table is good when it:
-
-- extracts real wording or implied claims from the thesis,
-- rates evidence as strong, moderate, weak, or missing,
-- identifies whether the claim would sound too broad during defense,
-- rewrites it into narrower, speakable wording,
-- preserves the user's actual contribution instead of weakening it unnecessarily.
+---
 
 ## Word Layout Expectations
 
-The `.docx` should be skimmable:
+The `.docx` should be skimmable under pressure:
 
-- evaluator sections start on new pages,
-- matrix and risk tables remain compact,
-- claim calibration table is visible before evaluator sections when there are high-risk claims,
-- question titles are visually distinct,
-- answer blocks are boxed or shaded,
-- `▶ 问题意图`, `▶ 10秒回答`, `▶ 30秒回答`, `▶ 60秒回答`, and `▶ 加分点` labels are highlighted,
-- page headers/footers are present,
+- evaluator sections start on **new pages**;
+- matrix / risk tables stay **compact**;
+- the claim-calibration table is visible **before** evaluator sections when there are high-risk claims;
+- question titles are **visually distinct**;
+- answer blocks are **boxed or shaded**;
+- highlight the labels `▶ 问题意图  ▶ 10秒回答  ▶ 30秒回答  ▶ 60秒回答  ▶ 加分点` (and `【潜在关切点】`);
+- page headers/footers present;
 - avoid long unbroken paragraphs.
+
+(Highlight labels list is canonical in `manual-structure.md` → "Preferred Chinese Labels".)

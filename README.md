@@ -1,17 +1,20 @@
 <div align="center">
 
+<img src="assets/banner.jpg" alt="Thesis Defense Guide" width="100%" />
+
 # Thesis Defense Guide
 
-### Thesis Defense Q&A Prep Skill
+### A defense simulator & risk-prediction system for any discipline
 
 [![Skill](https://img.shields.io/badge/type-Agent%20Skill-blue.svg)](https://agentskills.io)
-[![Platform](https://img.shields.io/badge/platform-Codex%20%7C%20Claude%20Code-lightgrey.svg)](#compatibility)
+[![Version](https://img.shields.io/badge/version-0.5.0-blue.svg)](CHANGELOG.md)
+[![Platform](https://img.shields.io/badge/platform-Codex%20%C2%B7%20Claude%20Code%20%C2%B7%20Cowork-lightgrey.svg)](#compatibility)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
-[![Output](https://img.shields.io/badge/output-Markdown%20%7C%20DOCX-orange.svg)](#word-output)
+[![Output](https://img.shields.io/badge/output-Markdown%20%7C%20DOCX-orange.svg)](#output)
 
-**Turn your thesis, defense materials, and committee list into a practical defense Q&A manual.**
+**Turn your thesis, slides, and committee list into a committee-by-committee defense manual — with an honest weakness audit, reverse-engineered questions, bounded answers, an interactive mock defense, and a readiness score.**
 
-Evaluator profiles. Risk radar. Stage-aware questions. 10/30/60-second oral answers. Polished Word output.
+Works for **any discipline** — sciences, engineering, social science, humanities, law, the arts — by detecting your research paradigm and adapting its standards.
 
 English | [中文](README_ZH.md)
 
@@ -19,336 +22,169 @@ English | [中文](README_ZH.md)
 
 ---
 
+## Contents
+
+🧩 [The Problem](#the-problem) · 🎯 [The Solution](#the-solution) · 🧭 [How It Works](#how-it-works) · 🎓 [Disciplines](#disciplines-paradigm-families) · 📄 [Output](#output) · 📥 [Required Inputs](#required-inputs) · 🚀 [Quick Start](#quick-start) · 🗂️ [Project Layout](#project-layout) · 🔌 [Compatibility](#compatibility) · 🙏 [Acknowledgments](#acknowledgments)
+
+---
+
 ## The Problem
 
-Preparing for a thesis defense is not just about memorizing your thesis.
+The hard part of a defense isn't re-reading your thesis. It's knowing **who will ask what, why, and how far your answer can safely go** — and finding the weak points *before* the committee does.
 
-The hard part is knowing **who will ask what, why they will ask it, and how far your answer can safely go**.
-
-Common preparation methods leave big gaps:
-
-| Approach | Result |
-|----------|--------|
-| Generic defense question lists | Too broad, not tied to your committee |
-| Reading your thesis repeatedly | Helps with recall, but not pressure handling |
-| Asking AI for "possible questions" | Often produces generic questions without evaluator context |
-| Hiding weak points | Makes you fragile when committee members press on evidence |
+| Common approach | Why it falls short |
+|---|---|
+| Generic question lists | Too broad; not tied to your committee or your thesis's real weak points |
+| Re-reading your thesis | Helps recall, not pressure-handling |
+| Asking AI "what might they ask?" | Generic questions, no evaluator context, and the same voice writes the question *and* a reassuring answer — so it quietly softens the attacks that matter |
+| Hiding weak points | You get cornered the moment a committee member presses on evidence |
 
 ## The Solution
 
-This skill teaches an AI coding agent to build a **committee-by-committee defense preparation manual**.
+This skill runs your materials through an **adversarial pipeline** and ships rehearsal-ready output:
 
-It reads your thesis or slides, researches public committee information, maps each evaluator's likely concerns to your work, and produces answers that are direct, bounded, and speakable under real defense pressure.
+1. **Detect the research paradigm** and judge everything by *that field's* standards.
+2. **Audit weaknesses first — independently of the committee.** A dedicated, attack-only pass produces a read-only **Weakness Ledger** (severity-ranked, location-cited).
+3. **Reverse-engineer the questions** a committee derives from those weaknesses, ranked into a **Top-10 most-dangerous** list.
+4. **Coach bounded answers** that never overclaim (4-move skeleton, 10/30/60-second layers, concede-and-redirect for the fatal ones).
+5. **Research the committee** (evidence-graded) to re-weight and personalize — never to fabricate.
+6. **Mock defense:** an interactive examiner that **keeps attack intensity** and doesn't fold when an answer is weak.
+7. **Score readiness (0–100)** and ship **risk-first** output led by a day-of one-pager.
 
-| Module | What It Does |
-|--------|--------------|
-| **Thesis Analysis** | Extracts title, claims, methods, evidence, limitations, and future work |
-| **Evaluator Research** | Profiles each committee member using public sources and evidence strength labels |
-| **Risk Radar** | Identifies vulnerable claims, missing evidence, and likely attack points |
-| **Stage Strategy** | Adapts questions for proposal, midterm, pre-defense, final defense, viva, or written review |
-| **Q&A Manual** | Produces evaluator-specific questions, intent, answers, bonus points, and follow-up scripts |
-| **Claim Calibration** | Prevents overclaiming by rewriting risky thesis statements into safer oral wording |
-| **Word Export** | Converts the final Markdown guide into a polished `.docx` manual |
+### Why it's different
+
+- **Generator/evaluator split.** The attack and the answer are *separate passes*. The weakness audit is committed before any answer exists and is read-only afterward — so the questions that can actually sink you don't get quietly smoothed over.
+- **Weakness-first backbone.** Questions come from the thesis's weaknesses first; committee research only re-weights them. Even with zero info on an examiner, the dangerous questions still surface.
+- **Discipline-adaptive.** A paradigm layer swaps the lens: econometric identification for an economics thesis, source criticism for a history thesis, proof validity for a maths thesis — same engine, different lens.
+- **Anti-overclaiming as `IRON RULES`.** Simulation isn't sold as reality, correlation isn't causation, future work isn't a finished contribution — and the manual concedes real limits instead of inflating them.
+
+---
 
 ## How It Works
 
-The skill follows a structured workflow from intake to final rehearsal document:
+<div align="center">
+<img src="assets/workflow.svg" alt="Pipeline from Stage 0 paradigm detection to Stage 7 readiness and output" width="100%" />
+</div>
 
-```text
-┌──────────────────┐     ┌──────────────────┐     ┌──────────────────┐
-│   Phase 1        │     │   Phase 2        │     │   Phase 3        │
-│                  │     │                  │     │                  │
-│  Thesis Intake   │────▶│  Committee       │────▶│  Defense Manual  │
-│  & Risk Reading  │     │  Mapping         │     │  Generation      │
-│                  │     │                  │     │                  │
-│  • Read thesis   │     │  • Research each │     │  • Write Q&A     │
-│  • Extract claims│     │    evaluator     │     │  • Add scripts   │
-│  • Find weak     │     │  • Map interests │     │  • Add red lines │
-│    evidence      │     │    to thesis     │     │  • Export DOCX   │
-└──────────────────┘     └──────────────────┘     └──────────────────┘
-```
+Each stage is backed by a dedicated reference file (the "how"), while `SKILL.md` stays lean (the "what" + IRON RULES). Re-entry after a revision re-runs only the weakness audit + mock defense.
 
-### Phase 1: Thesis Intake & Risk Reading
+## Disciplines (paradigm families)
 
-The agent reads the thesis, dissertation, slides, proposal, or draft materials and extracts the defense-critical parts:
+Detection classifies the **paradigm**, not the major — a handful of families cover every field.
 
-- research problem and thesis title
-- claimed contributions
-- methods and assumptions
-- experiments, data, and evaluation metrics
-- limitations and future work
-- claim-evidence mismatches
+<details>
+<summary><b>Six paradigm families</b> — click to expand</summary>
 
-**Output**: thesis fact sheet, thesis risk radar, and claim calibration table.
+| Family | Example fields | Judged by |
+|---|---|---|
+| Empirical–Quantitative | sciences, engineering, quant social science, finance | design, identification, baselines, reproducibility |
+| Empirical–Qualitative | anthropology, sociology, education | positionality, saturation, triangulation, transferability |
+| Theoretical–Formal | maths, theoretical CS, analytic philosophy | proof validity, assumptions, non-triviality |
+| Textual–Interpretive | literature, history, area studies | source criticism, contextualization, historiography |
+| Doctrinal–Normative | law, jurisprudence, normative ethics | doctrinal accuracy, precedent, counterarguments |
+| Design–Creative | art, design, architecture, creative writing | craft, concept–artifact link, contribution to practice |
 
-### Phase 2: Committee Research & Mapping
+</details>
 
-The agent researches each evaluator from public sources, prioritizing official profiles, lab pages, publications, and institutional pages.
+Mixed/interdisciplinary work loads two lenses and watches the seam.
 
-It separates:
+## Output
 
-- **confirmed facts** from official profiles or CVs;
-- **medium-confidence patterns** from repeated publication themes;
-- **low-confidence inferences** from adjacent research areas.
+<div align="center">
+<img src="assets/output-preview.svg" alt="Sample day-of one-pager: readiness score, top exposures, Top-10 questions, concession lines" width="88%" />
+</div>
 
-**Output**: evaluator profiles, evidence notes, and an evaluator-thesis mapping matrix.
+Shipped **by risk, not by completeness** (default first deliverable = the one-pager):
 
-### Phase 3: Defense Manual Generation
+- **Tier A — Day-of one-pager:** one-line positioning, readiness score + top-3 exposures, Top-10 questions with 30-second answers, must-say concession lines.
+- **Tier B — Per-evaluator battle cards:** evidence-graded profile + signature questions + the one trap to avoid.
+- **Tier C — Weakness radar & calibration:** severity-ranked ledger + claim-calibration table.
+- **Tier D — Mock-defense log:** drill transcripts, fumbles, re-prioritization.
+- **Tier E — Full Word manual:** the complete by-evaluator guide (`.docx`).
 
-The agent writes a rehearsal-ready manual organized by evaluator.
+A **0–100 readiness score** with an exposure tier tells you *where* to spend limited prep time.
 
-Each evaluator section includes:
+---
 
-- profile card
-- potential concern callout
-- high-probability questions
-- question intent
-- 10-second answer
-- 30-second answer
-- 60-second answer
-- bonus point
-- follow-up handling
-- chain follow-up script
-- final defensive bottom line
+## Required Inputs
 
-## Defense Stage Awareness
-
-The skill adapts its questions and answer style to the actual stage of your defense:
-
-| Stage | Main Committee Concern | Question Emphasis |
-|-------|------------------------|-------------------|
-| **Proposal Defense** | Is the topic valuable and feasible? | Research gap, route choice, expected validation, risk control |
-| **Midterm Defense** | Is the project on track? | Progress, unfinished work, schedule risk, method changes |
-| **Pre-Defense** | Is the thesis ready to submit? | Structure, missing evidence, contribution wording, revision priorities |
-| **Final Defense / Viva** | Are the contribution and evidence defensible? | Novelty, rigor, limitations, reproducibility, generalization |
-| **Written Committee Review** | Is the written argument traceable? | Source evidence, compliance, argument structure, reviewer objections |
-
-If the stage is unknown, the skill uses final defense / viva assumptions and states that assumption in the guide.
-
-## Anti-Overclaiming Guardrails
-
-This skill is designed to make you sound **strong but careful**.
-
-It does not help you hide weak evidence or inflate the thesis. Instead, it calibrates your claims:
-
-| Risky Move | Safer Defense Behavior |
-|------------|------------------------|
-| Treating simulation as real-world validation | Say the result supports the simulated setting only |
-| Treating correlation as causality | State the observed relationship and the missing causal test |
-| Treating a narrow experiment as universal proof | Limit the conclusion to the tested dataset or scenario |
-| Treating future work as completed contribution | Present it as a next validation step |
-| Ignoring missing baselines or ablations | Acknowledge the gap and explain what current evidence still supports |
-
-The goal is not to weaken your work. The goal is to make your answer harder to attack.
+1. Your thesis or defense materials (PDF / DOCX / PPTX / Markdown / text / a folder).
+2. The committee/evaluator list (names required).
+3. The institution context (school/program; and the defense stage if known).
 
 ## Quick Start
 
-### Installation
+Ask your agent:
 
-Clone or download this repository:
+```text
+Use thesis-defense-guide to build a defense preparation manual.
+My thesis is attached, my committee members are: [names + titles],
+and it's a final master's defense at [school / program].
+Start with the day-of one-pager and the Top-10 dangerous questions.
+```
+
+### Install
+
+**Codex:** copy the folder into your skills directory:
 
 ```bash
 git clone https://github.com/w1163222589-coder/thesis-defense-guide.git
-```
-
-Copy the skill folder into your Codex skills directory:
-
-```bash
 cp -r thesis-defense-guide ~/.codex/skills/
 ```
 
-On Windows, the target is usually:
+**Claude Code / Cowork:** place the folder under your skills directory (e.g. `~/.claude/skills/`) or install as a plugin, then restart. Any agent that can read files, browse public sources, and run Python can use it.
 
-```text
-C:\Users\<USER>\.codex\skills\thesis-defense-guide
-```
+> The bundled `scripts/markdown_to_docx.py` produces the styled `.docx`; Markdown output works without it.
 
-Restart Codex after installing the skill.
-
-Or install via CC Switch: Skills panel → Add from GitHub → paste the repo URL.
-
-### Required Inputs
-
-Before substantive research or drafting, provide:
-
-1. your thesis or defense materials;
-2. the committee/evaluator list;
-3. your school, university, college, program, or lab context.
-
-Accepted materials include PDF, DOCX, PPTX, Markdown, plain text, or a folder containing drafts and slides.
-
-### Usage
-
-In Codex or another compatible agent, ask:
-
-```text
-Use $thesis-defense-guide to create a defense preparation manual.
-My thesis materials are in this folder, my committee members are listed below,
-and the defense is a final master's thesis defense at [school/program].
-Please produce a Word guide with evaluator-specific questions, risk radar,
-claim calibration, and 10/30/60-second oral answers.
-```
-
-For a proposal defense:
-
-```text
-Use $thesis-defense-guide for my proposal defense.
-Focus on research value, feasibility, technical route, expected validation,
-and likely committee concerns.
-```
-
-For pre-defense:
-
-```text
-Use $thesis-defense-guide for my pre-defense.
-Focus on thesis structure, missing experiments, contribution wording,
-and revision priorities before final submission.
-```
-
-## Output Structure
-
-```text
-defense-guide/
-├── defense-guide.md          # Source Markdown manual
-├── defense-guide.docx        # Polished Word guide
-└── sources-appendix.md       # Optional public-source evidence appendix
-```
-
-The guide itself typically contains:
-
-```text
-Thesis Defense Q&A Guide
-├── Background and Usage
-├── Defense Stage Strategy
-├── Thesis Fact Sheet
-├── Thesis Risk Radar
-├── Claim Calibration Table
-├── Evaluator-Thesis Mapping Matrix
-├── Committee Member 1
-│   ├── Profile
-│   ├── Potential Concern
-│   ├── High-Probability Q&A
-│   ├── Chain Follow-Up Script
-│   └── Bottom Line
-├── Committee Member 2
-├── Universal Defense Controls
-├── One-Page Rehearsal Sheet
-└── Sources Appendix
-```
-
-## Example Output
-
-The annotated previews below are built from an anonymized real defense-preparation manual. Instead of showing full pages, they crop the useful areas and call out the parts that matter.
-
-### Evaluator-Specific Q&A Anatomy
-
-<p align="center">
-  <img src="assets/screenshots/preview-evaluator-qa-annotated.png" alt="Annotated evaluator-specific Q&A preview" width="780">
-</p>
-
-### Universal Question Pack
-
-<p align="center">
-  <img src="assets/screenshots/preview-universal-questions-crop.png" alt="Cropped universal defense question preview" width="780">
-</p>
-
-### High-Risk Appendix
-
-<p align="center">
-  <img src="assets/screenshots/preview-risk-appendix-annotated.png" alt="Annotated high-risk appendix preview" width="780">
-</p>
-
-## Word Output
-
-The bundled converter turns a generated Markdown manual into a styled `.docx` file:
-
-```bash
-python scripts/markdown_to_docx.py \
-  --input defense-guide.md \
-  --output defense-guide.docx \
-  --title "Thesis Defense Q&A Guide"
-```
-
-The converter supports:
-
-- headings and evaluator sections
-- Markdown tables
-- question labels
-- shaded answer boxes
-- dialogue-style follow-up scripts
-- page headers and footers
-
-## Key Design Decisions
-
-### Why Organize by Evaluator?
-
-Real defense questions are shaped by who is asking. A committee member who studies optimization may challenge algorithm assumptions; a committee member who studies systems may challenge deployment feasibility. Organizing by evaluator makes the manual easier to rehearse.
-
-### Why Include Risk Radar?
-
-Students often prepare their strongest points and avoid weak ones. Committees do the opposite. Risk radar makes weak evidence visible early, so you can prepare controlled answers before the defense.
-
-### Why 10/30/60-Second Answers?
-
-Defense Q&A is dynamic. Sometimes you need a one-sentence answer. Sometimes the chair lets you explain. Layered answers let you respond without rambling.
-
-### Why Anti-Overclaiming?
-
-Overclaiming is one of the easiest ways to lose credibility. A careful answer that admits the boundary of the work is usually stronger than a broad answer the evidence cannot support.
-
-## Common Failure Modes & How the Skill Prevents Them
-
-| Failure Mode | Symptom | Prevention |
-|-------------|---------|------------|
-| **Generic questions** | Questions could apply to any thesis | Evaluator-thesis mapping forces committee-specific pressure points |
-| **Unsupported claims** | Answers sound confident but exceed evidence | Claim calibration rewrites risky wording |
-| **Hidden limitations** | Student gets cornered when asked about weaknesses | Risk radar turns limitations into prepared answers |
-| **Unclear defense stage** | Proposal questions and final-defense questions get mixed | Stage strategy changes the question emphasis |
-| **Made-up evaluator facts** | Public profiles become hallucinated biographies | Evidence strength labels separate confirmed facts from inference |
-
-## Compatibility
-
-| Platform | Status | Notes |
-|----------|--------|-------|
-| OpenAI Codex | Fully supported | Primary development target. Uses local file tools, web research, and bundled DOCX converter |
-| Claude Code | Compatible | The workflow is agent-readable and can be adapted with equivalent file, research, and Python tooling |
-| Other AI agents | Adaptable | Any agent that can read files, browse public sources, and run Python can adapt the workflow |
+---
 
 ## Project Layout
 
+<details>
+<summary><b>Repository layout</b> — 10 reference files + lean orchestrator</summary>
+
 ```text
 .
-├── README.md
-├── README_ZH.md
-├── LICENSE
-├── SKILL.md
-├── agents/
-│   └── openai.yaml
+├── SKILL.md                     # lean orchestrator: inputs, IRON RULES, Stage 0–7, output tiers
 ├── references/
-│   ├── manual-structure.md
-│   └── style-rubric.md
-└── scripts/
-    └── markdown_to_docx.py
+│   ├── discipline-profiles.md         # paradigm-adaptive lens (6 families)  ← read first
+│   ├── weakness-audit-framework.md    # Three Lenses + Devil's-Advocate dims + severity → Weakness Ledger
+│   ├── ppt-audit-checklist.md         # slide-level audit (optional, if slides)
+│   ├── evaluator-research-protocol.md # evidence-graded research + panel verification
+│   ├── question-generation-rules.md   # weakness→question engine, escalation, Top-10
+│   ├── answer-coaching-framework.md   # 4-move bounded answers, stance by severity, anti-overclaim
+│   ├── mock-defense-protocol.md       # interactive attack-intensity-preserving examiner
+│   ├── readiness-rubric.md            # 0–100 readiness score + tiers
+│   ├── manual-structure.md            # Tier-E manual skeleton + highlight labels
+│   └── style-rubric.md                # tone + Word layout
+├── scripts/
+│   └── markdown_to_docx.py
+├── agents/openai.yaml
+├── CHANGELOG.md
+├── README.md / README_ZH.md
+└── LICENSE
 ```
 
-## Contributing
+</details>
 
-Issues, suggestions, and PRs are welcome.
+## Compatibility
 
-Useful contributions include:
+| Platform | Status |
+|---|---|
+| OpenAI Codex | Supported (local file tools, web research, bundled DOCX converter) |
+| Claude Code / Cowork | Supported (equivalent file, research, and Python tooling) |
+| Other agents | Adaptable — needs file read, public-source browsing, and Python |
 
-- stronger defense manual examples
-- better evaluator research checklists
-- DOCX layout improvements
-- bilingual answer templates
-- stage-specific question patterns for different disciplines
+<div align="center">
+<img src="assets/emblem.jpg" alt="" width="116" />
+</div>
+
+## Acknowledgments
+
+The adversarial-review design draws on concepts from [**Academic Research Skills**](https://github.com/Imbad0202/academic-research-skills) by Cheng-I Wu (the Devil's-Advocate review pattern, the "three lenses" review-thinking framework, attack-intensity-preservation, and the cognitive-framework / IRON-RULE style). Concepts were re-implemented and adapted for defense preparation; no text was copied.
+
+Also: [Agent Skills](https://agentskills.io), and the reality of thesis-defense pressure — the reason this skill exists.
 
 ## License
 
 MIT
-
-## Acknowledgments
-
-- [OpenAI Codex](https://openai.com/codex/) — the AI coding agent platform used to build and test this skill
-- [Agent Skills](https://agentskills.io) — the open standard for packaging reusable agent capabilities
-- Real thesis defense pressure — the reason this skill exists
