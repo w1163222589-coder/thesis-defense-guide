@@ -1,6 +1,20 @@
 # Changelog
 
-All notable changes to **Thesis Defense Guide**. This skill moved from a linear manual generator (v0.1.3) to an adversarial, paradigm-adaptive defense simulator (v0.5.0).
+All notable changes to **Thesis Defense Guide**. This skill moved from a linear manual generator (v0.1.3) to an adversarial, paradigm-adaptive defense simulator (v0.5.0+).
+
+## [0.6.0] — 2026-06-10
+### Added
+- **Reviewer-report seeding**: official reviewer reports (盲审/评阅意见) + revision-response sheet are now first-class optional inputs; they seed the Weakness Ledger (`[REVIEWER]` rows, High evidence), and "claimed fixed but not fixed" is auto-CRITICAL.
+- **Concept Drill** (必然题层): 15–20 thesis-term fundamentals with crisp spoken answers, generated from the thesis's own vocabulary; ships as the one-pager appendix.
+- **Ledger amendment protocol** (append-only `W#-A#`): new student evidence is ruled on by the auditor voice only — fixes "read-only blocks legitimate evidence" without reopening the self-softening hole.
+- **Readiness anchor caps**: mechanical score caps (e.g., ≥2 unmitigated CRITICAL → overall ≤64; no mock yet → D6 ≤65) make the 0–100 reproducible across runs; delta moves only on revisions/mock/amendments.
+- **Chinese evaluator sources + panel roles**: 学院官网/知网/万方/百度学术 hierarchy; chair/reviewer/member/supervisor/secretary role tagging with question-allocation patterns.
+- **Academic-norms backbone**: near-universal AI-use / originality / 大小论文 questions, with an integrity rule (IRON RULE A6 — honest, policy-compliant answers only).
+- **Question-danger factors**: `exposure_surface` (+1 title/abstract/conclusion/headline-slide) and `reviewer_flag` (+1).
+- **Anti-hallucination field**: every ledger entry now requires a ≤30-char verbatim quote of the attacked claim.
+- Intake additions: publication list (credibility anchors), school AI/originality policy.
+### Changed
+- `SKILL.md` → v0.6.0; `.gitignore` hardened (thesis PDFs, handoff doc, planning docs, generated .docx).
 
 ## [0.5.0] — 2026-06-07
 ### Added

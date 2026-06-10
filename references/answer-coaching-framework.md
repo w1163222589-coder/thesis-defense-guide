@@ -14,9 +14,10 @@ The **defense voice** — a separate pass from the weakness audit. Turns each ge
   - a small or local result as universal effectiveness;
   - planned/future work as an already-completed contribution.
 - **IRON RULE A2 — No hiding.** Do not bury missing baselines, missing ablations, limited datasets, unverified assumptions, or negative results. A controlled concession beats a forced justification.
-- **IRON RULE A3 — Honor the ledger.** An answer must not claim a CRITICAL/MAJOR weakness is resolved when it isn't. Acknowledge → bound → defend what the evidence *does* support → name the next step.
+- **IRON RULE A3 — Honor the ledger.** An answer must not claim a CRITICAL/MAJOR weakness is resolved when it isn't. Severity is read from the entry's latest `W#-A#` amendment ruling, if any — an answer may rely on a downgrade only after the auditor voice ruled it (never argue the ledger down from inside an answer). Acknowledge → bound → defend what the evidence *does* support → name the next step.
 - **IRON RULE A4 — Bounded verbs.** Prefer "indicates / supports / under this setting / within this dataset / preliminary evidence". Avoid "proves / guarantees / always / fully solves / optimal / real-world validated" unless the thesis truly earns it.
 - **IRON RULE A5 — Speakable.** Each answer is something the student can say aloud in the stated time. No thesis prose, no paragraph the size of an abstract.
+- **IRON RULE A6 — Integrity questions get honest answers.** For AI-use, originality/查重, and authorship questions, coach a truthful, policy-compliant answer. Never coach concealment or minimization — a defensible process stated plainly beats a discovered evasion.
 
 ---
 
@@ -57,7 +58,7 @@ Provide layers so the student can match the chair's tempo. Required for every To
 - **60秒 / 60-second** — for complex/high-risk items; adds the boundary detail and the next step.
 - **若被追问 / If pressed** — one fallback line that preserves the boundary when interrupted.
 
-Add **▶ 加分点 / Bonus point** only when a single extra sentence genuinely raises the answer (a smart limitation, a neat comparison). Never pad.
+Add **▶ 加分点 / Bonus point** only when a single extra sentence genuinely raises the answer (a smart limitation, a neat comparison). Published/accepted papers from the thesis are the best bonus material — peer review is a credibility anchor ("this model passed review at [venue]"). Never pad.
 
 ---
 

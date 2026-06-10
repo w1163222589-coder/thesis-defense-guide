@@ -35,6 +35,7 @@ Disciplines Stage 2 (researching the committee). The goal is an **evidence-grade
    - Economics/finance: RePEc/IDEAS, SSRN, NBER, journal pages.
    - Law: SSRN, HeinOnline, the law-school faculty page.
    - Humanities: the department page, the university press / journal record, books.
+   - **Chinese institutions (the common case in practice):** the 学院官网 faculty page / 导师队伍 page (High); CNKI 知网 author page, 万方, 百度学术 for the publication record (many Chinese faculty have **no** Google Scholar profile); 学校新闻 / 学报 pages (Med). Search the Chinese name + 学院 first, not the romanization.
 3. **Recent work themes** — last ~3–5 years of titles/abstracts → infer recurring methods, questions, and "what they'd press."
 4. **Talks / reviews / editorial roles** — a survey or review they wrote is gold for "what they think rigor means."
 5. **Secondary mentions** (news, interviews) — Low grade; corroborate before use.
@@ -68,6 +69,7 @@ Before any evaluator claim enters the guide:
 - Compare the provided committee list to the thesis cover page / official defense notice. **Flag any mismatch** (it happens — names swapped, an old list, the supervisor included by mistake).
 - Identify the **supervisor**: they are normally present but do not cross-examine their own student. If a "committee member" turns out to be the supervisor, note it — don't prep attacks for them.
 - Confirm titles/names/honorifics so the student doesn't misaddress the chair.
+- **Tag each member's role — roles shape questions:** 主席/chair (controls time; often opens with the contribution-framing question), 评阅人/official reviewers (have read closely and submitted written comments — if reviewer reports exist, bind each report to its reviewer: their comments are near-certain questions), 委员/members, 导师/supervisor (doesn't attack), 秘书/secretary (doesn't question). Typical allocation: chair asks 1–2 framing questions; reviewers go deepest.
 
 ---
 

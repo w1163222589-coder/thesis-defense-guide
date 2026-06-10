@@ -1,9 +1,9 @@
 ---
 name: thesis-defense-guide
-description: "Create thesis/dissertation defense preparation guides for any discipline (sciences, engineering, social science, humanities, law, the arts) by detecting the thesis's research paradigm and adapting its standards. Runs an adversarial, evaluator-agnostic weakness audit of the thesis and slides (Three Lenses + Devil's-Advocate dimensions + severity), reverse-engineers the likely committee questions from those weaknesses, drafts bounded anti-overclaiming oral answers, scores defense readiness (0-100), and ships risk-ordered rehearsal output (day-of one-pager + per-evaluator battle cards + full Word manual). Also researches committee members to re-weight and personalize questions. Use when the user asks to prepare for a thesis defense, dissertation defense, viva, proposal/midterm/pre-defense, committee Q&A, likely reviewer questions, evaluator-specific questions, thesis weak points, risk analysis, mock defense, oral answer scripts, or a polished defense manual. Before working, require three inputs: the user's thesis or defense materials, the committee/evaluator list, and the specific school/university/program context."
+description: "Create thesis/dissertation defense preparation guides for any discipline by detecting the thesis research paradigm and adapting evidence standards. Use when the user asks for defense/viva/proposal/midterm/pre-defense prep, committee Q&A, likely reviewer questions, evaluator-specific questions, thesis weak-point or risk analysis, response to reviewer comments (盲审/评阅意见), mock defense, oral answer scripts, battle cards, a day-of one-pager, or a full Word manual. Workflow: audit thesis/slides plus reviewer reports and revision-response sheets into an evaluator-blind Weakness Ledger, generate weakness-traced Top-10 questions and concept drill, coach bounded 10/30/60-second anti-overclaim answers, research committee members with evidence grades, run mock defense, and score readiness 0-100. Before substantive work, require three inputs: thesis/defense materials, committee/evaluator list, and school/university/program context."
 metadata:
-  version: "0.5.0"
-  last_updated: "2026-06-07"
+  version: "0.6.0"
+  last_updated: "2026-06-10"
 ---
 
 # Thesis Defense Guide
@@ -23,7 +23,7 @@ If anything is missing, ask only for the missing item(s):
 
 ## Optional Context (capture only if it changes the guide)
 
-Defense stage (proposal/midterm/pre-defense/final/viva/written review); language and tone; time limits (talk length, Q&A length, slide count, strict chair?); relationship context (same lab, cross-team, external/industry examiner); known weak points (the student's worries, advisor warnings, prior rejected claims); **prior-year questions from the same lab/committee** (high-signal — ask for these); output preference.
+Ask once for the high-signal items first: **official reviewer reports (盲审/评阅意见) + the revision-response sheet (修改说明)** — the single strongest question predictor; if provided they seed the Weakness Ledger (Stage 1); **prior-year questions from the same lab/committee**; the **publication list** (papers published/accepted from this thesis — credibility anchors for answers); the school's **AI-use / originality-check policy** (an AI-usage question is now near-universal). Then: defense stage (proposal/midterm/pre-defense/final/viva/written review); language and tone; time limits (talk length, Q&A length, slide count, strict chair?); relationship context (same lab, cross-team, external/industry examiner); known weak points (the student's worries, advisor warnings, prior rejected claims); output preference.
 
 ---
 
@@ -31,7 +31,7 @@ Defense stage (proposal/midterm/pre-defense/final/viva/written review); language
 
 - **IR-0 Paradigm-adaptive.** Detect the thesis's paradigm at Stage 0 (`references/discipline-profiles.md`) and judge evidence, rigor, and questions by *that paradigm's* standards. Never apply experiment-style expectations (baselines, ablations, reproducibility, p-values) to interpretive, doctrinal, or creative work — or vice-versa.
 - **IR-1 Generator/evaluator split.** The weakness audit (Stage 1) is committed **before** any answer is written. The attacker voice and the answer voice are different passes. See `references/weakness-audit-framework.md`.
-- **IR-2 Read-only ledger.** Later stages may cite Weakness Ledger IDs but never soften, merge, or delete them. An answer must not claim a logged weakness is gone.
+- **IR-2 Read-only ledger.** Later stages may cite Weakness Ledger IDs but never soften, merge, or delete them. New student evidence enters only through the append-only amendment protocol (`W#-A#`, auditor voice — see `references/weakness-audit-framework.md`). An answer must not claim a logged weakness is gone unless an amendment ruled it.
 - **IR-3 Weakness-first questions.** Every predicted question traces to a weakness (or the universal backbone). Never drop a CRITICAL weakness because no evaluator obviously "owns" it.
 - **IR-4 No overclaim.** Never sell simulation as real-world proof, correlation as causation, a narrow result as universal, or future work as a finished contribution. Prefer bounded verbs.
 - **IR-5 No fabrication (anti-leakage).** Cite a concrete location for every weakness; mark true gaps as `[MATERIAL GAP]`. Never invent an evaluator's papers, students, or "the question Prof. X will ask" without evidence. Separate confirmed facts from inference and label evidence strength (High/Med/Low).
@@ -58,10 +58,10 @@ Defense stage (proposal/midterm/pre-defense/final/viva/written review); language
 ## Workflow
 
 ### Stage 0 — Intake & paradigm detection
-Confirm the three inputs. **Detect the research paradigm** (empirical-quant / empirical-qual / theoretical-formal / textual-interpretive / doctrinal-normative / design-creative / mixed) via `references/discipline-profiles.md`, and load its lens (evidence standards, evaluator archetypes, rigor definition). State the detected paradigm and invite correction ("Detected paradigm: …; tell me if this is wrong"). Capture time budget, known weak points, prior-year questions, and whether the defense uses slides. Decide output set (one-pager always; Word if asked). **Checkpoint:** confirm paradigm, scope, and evaluator list before deep work.
+Confirm the three inputs. **Detect the research paradigm** (empirical-quant / empirical-qual / theoretical-formal / textual-interpretive / doctrinal-normative / design-creative / mixed) via `references/discipline-profiles.md`, and load its lens (evidence standards, evaluator archetypes, rigor definition). State the detected paradigm and invite correction ("Detected paradigm: …; tell me if this is wrong"). Capture time budget, known weak points, prior-year questions, reviewer reports + revision response (if any), the publication list, the school's AI/originality policy, and whether the defense uses slides. Decide output set (one-pager always; Word if asked). **Checkpoint:** confirm paradigm, scope, and evaluator list before deep work.
 
 ### Stage 1 — Weakness audit  ★ keystone, evaluator-blind
-Run `references/weakness-audit-framework.md` on the thesis **and** slides. Produce the **Weakness Ledger** (severity-ranked, location-cited, read-only). Do NOT look at the committee list yet (IR-2/W2). Do NOT write any answers (IR-1/W3).
+Run `references/weakness-audit-framework.md` on the thesis **and** slides. If official reviewer reports exist, seed the ledger from them first (`[REVIEWER]` rows, High evidence; a comment claimed fixed but not actually fixed is CRITICAL). Produce the **Weakness Ledger** (severity-ranked, location-cited, verbatim-quoted, read-only). Do NOT look at the committee list yet (IR-2/W2). Do NOT write any answers (IR-1/W3).
 **1.5 Self-check:** run the framework's calibration footer; lead with the single most dangerous flaw.
 
 For PDFs use local PDF tooling; for PPTX/DOCX use appropriate extraction. If the defense uses slides, audit them with `references/ppt-audit-checklist.md` (pacing, per-slide overclaim, stop-risk slides, figure readability, spoken-vs-written consistency, backup slides) and merge slide weaknesses into the Weakness Ledger; skip this if there are no slides (common in humanities/law vivas).
@@ -74,7 +74,7 @@ Run `references/evaluator-research-protocol.md`: a paradigm-appropriate source h
 Map each weakness to the evaluator *type* most likely to raise it (methodology / domain / application / adversarial). Where High/Med-confidence research binds a real person to a type, re-weight their questions up. Keep the matrix short; detail goes to evaluator sections.
 
 ### Stage 4 — Question generation
-Run `references/question-generation-rules.md`: weaknesses → questions, 3-level escalation ladder (+ a "cornered" turn for CRITICALs), evaluator-type tags, stage-aware emphasis. Output the **Top-10 Most Dangerous Questions**.
+Run `references/question-generation-rules.md`: weaknesses → questions, 3-level escalation ladder (+ a "cornered" turn for CRITICALs), evaluator-type tags, stage-aware emphasis. Output the **Top-10 Most Dangerous Questions** and the **Concept Drill** (15–20 thesis-term fundamentals with crisp answers).
 
 ### Stage 5 — Answer coaching
 Run `references/answer-coaching-framework.md`: 4-move answers, layered 10/30/60-second, stance by severity (CRITICAL→concede+redirect, MAJOR→qualify, MINOR→defend), claim calibration table, thesis-specific red-line phrases. Honor the ledger (IR-2).
@@ -86,7 +86,7 @@ Run `references/mock-defense-protocol.md`: a live drill where the simulated exam
 Score readiness with `references/readiness-rubric.md` (0–100 + tier + Top-3 exposures). Assemble the risk-ordered tiers below. **Checkpoint:** confirm before generating the heavy Word manual.
 
 ### Re-entry
-After the thesis/PPT is revised, re-run **Stage 1.5 + Stage 6 only** (re-review): did the fixes close the logged weaknesses? Re-score and show the delta.
+After the thesis/PPT is revised, re-run **Stage 1.5 + Stage 6 only** (re-review): did the fixes close the logged weaknesses? Record closures as ledger amendments (`W#-A#`), never by editing rows. Re-score and show the delta.
 
 ---
 
@@ -94,7 +94,7 @@ After the thesis/PPT is revised, re-run **Stage 1.5 + Stage 6 only** (re-review)
 
 Default first deliverable is **Tier A**. Generate lower tiers on request or when time allows.
 
-- **Tier A — Day-of one-pager:** thesis one-sentence positioning; readiness score + Top-3 exposures; **Top-10 dangerous questions** with 30-second answers; 3 CRITICAL concession lines.
+- **Tier A — Day-of one-pager:** thesis one-sentence positioning; readiness score + Top-3 exposures; **Top-10 dangerous questions** with 30-second answers; 3 CRITICAL concession lines; Concept Drill quick-answer list (appendix).
 - **Tier B — Per-evaluator battle cards:** evidence-graded profile + that evaluator's 3–5 signature questions + answers + the one trap to avoid. Begin each with a `【潜在关切点】 / Potential concern` callout.
 - **Tier C — Weakness radar & calibration:** severity-ranked Weakness Ledger + claim calibration table + stance per weakness.
 - **Tier D — Mock-defense log:** drill transcripts; fumbles and re-prioritization.
@@ -113,7 +113,7 @@ python "scripts/markdown_to_docx.py" --input "defense-guide.md" --output "defens
 
 ## Quality bar (summary; detail in the reference files)
 
-Lead with the single most dangerous question. Questions must feel committee-specific and stage-specific, and must trace to weaknesses. Answers must be speakable in their stated time, concede real limits, and never overclaim. Evaluator claims must be labeled by evidence strength. The readiness score must be consistent with the number of CRITICAL weaknesses. The one-pager must be usable under real pressure.
+Lead with the single most dangerous question. Questions must feel committee-specific and stage-specific, and must trace to weaknesses. Answers must be speakable in their stated time, concede real limits, and never overclaim. Evaluator claims must be labeled by evidence strength. The readiness score must be consistent with the number of unmitigated CRITICAL weaknesses and the anchor caps in `references/readiness-rubric.md`. The one-pager must be usable under real pressure.
 
 ## Bundled resources
 

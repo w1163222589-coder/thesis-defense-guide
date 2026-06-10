@@ -8,10 +8,10 @@ The adversarial, **evaluator-agnostic** audit of the thesis and slides. This sta
 
 ## IRON RULES (do not violate, even late in a long session)
 
-- **IRON RULE W1 — Pre-commitment.** Produce the full Weakness Ledger *before* drafting any question answer. Do not soften, merge, or delete a ledger entry once committed. Later stages may only *reference* ledger IDs, never edit them.
+- **IRON RULE W1 — Pre-commitment.** Produce the full Weakness Ledger *before* drafting any question answer. Do not soften, merge, or delete a ledger entry once committed. Later stages may only *reference* ledger IDs, never edit them. New evidence enters only through the append-only **Amendment protocol** below — and only the auditor voice rules on it.
 - **IRON RULE W2 — Evaluator-blind.** Audit the thesis on its own terms. Do NOT look at the committee list during this stage. A weakness is a weakness regardless of who is on the panel.
 - **IRON RULE W3 — Attack only, no rescue.** This stage finds problems. It must NOT propose how to defend them, reword claims to sound safer, or reassure. (Defense happens later, in answer-coaching-framework.md.)
-- **IRON RULE W4 — No invented flaws (anti-leakage).** Every weakness must cite a specific location (section, figure, table, slide). If evidence for a flaw is not actually in the materials, do not assert it. Mark genuinely missing items as `[MATERIAL GAP]`, not as fabricated defects.
+- **IRON RULE W4 — No invented flaws (anti-leakage).** Every weakness must cite a specific location (section, figure, table, slide) **and quote the attacked claim verbatim (≤30 chars) in the `verbatim` field**. If you cannot produce the quote, the entry is not committable — re-check the materials or mark `[MATERIAL GAP]`, never assert a fabricated defect.
 - **IRON RULE W5 — Lead with the single most dangerous flaw.** The ledger is ordered by severity. The first entry must be the one issue most likely to sink the defense.
 
 ---
@@ -25,6 +25,7 @@ A table the rest of the pipeline reads. One row per weakness.
 | `id` | `W1, W2, …` (stable; later stages cite these) |
 | `claim_or_target` | The specific thesis claim / method / experiment / slide under attack |
 | `location` | Section / figure / table / slide number |
+| `verbatim` | ≤30-char exact quote of the attacked claim (anti-hallucination anchor; required — see W4) |
 | `lens` | Which lens/dimension surfaced it (see below) |
 | `severity` | `CRITICAL / MAJOR / MINOR` (criteria below) |
 | `evidence_now` | What evidence the thesis currently offers for the claim |
@@ -32,6 +33,18 @@ A table the rest of the pipeline reads. One row per weakness.
 | `default_stance` | Derived from severity (see answer-coaching-framework.md): CRITICAL→concede+redirect, MAJOR→qualify, MINOR→defend |
 
 Append a one-line **calibration footer** after the ledger (see "Self-check" below).
+
+---
+
+## Part 0 — Reviewer-report seeding (run first when 盲审/评阅意见 exist)
+
+Official reviewer reports are pre-validated attacks — the highest-signal input this stage can get:
+
+1. Convert each substantive comment into a ledger row: `lens = REVIEWER`, evidence High, `location` = the report item; severity by the normal criteria below.
+2. Cross-check the revision-response sheet (修改说明): a comment marked "revised" that the materials do **not** actually fix is **CRITICAL** (evidence–conclusion mismatch — the committee will check exactly this).
+3. Reviewer rows keep a `[REVIEWER]` tag through question generation and get guaranteed Top-10 consideration (reviewers re-ask their own comments).
+
+This does not violate W2: reports attack the *thesis*, not the panel. Stay blind to the committee list itself.
 
 ---
 
@@ -106,13 +119,24 @@ Pull the paradigm's "CRITICAL patterns" from `discipline-profiles.md` and use th
 
 ---
 
+## Amendment protocol (append-only — the only way the ledger ever changes)
+
+W1/W3 protect against self-softening, not against new facts. When the student supplies evidence from **outside** the audited materials ("the field data is in my published paper"), do not edit the ledger and do not let the answer voice handle it:
+
+1. Only the **auditor voice** re-examines the entry, in a separate pass — never the answer voice, never mid-answer.
+2. Record the ruling as an appended line `W{n}-A{k}: {new evidence, source, ruling}` with ruling ∈ **upheld / downgraded** (e.g., CRITICAL→MAJOR) **/ closed-by-revision**. The original row is never edited or deleted; the audit trail stays visible.
+3. Answers and the readiness score read severity from the **latest ruling**.
+4. Anti-abuse: an amendment requires *citable* new evidence (a paper, dataset, document). Reassurance ("I'm confident it holds") is not evidence — ruling stays **upheld**.
+
+---
+
 ## Self-check (calibration footer — run after drafting the ledger)
 
 Answer briefly, in one line each; adjust the ledger if any answer is "no":
 1. Did I lead with the single most dangerous flaw (W1)?
 2. Is every CRITICAL backed by one of the four hard criteria (not just "I'd prefer more data")?
 3. Am I being at least as hard as a real external examiner would be (not as gentle as on my own work)?
-4. Did I cite a concrete location for every entry, and mark true gaps as `[MATERIAL GAP]` rather than inventing flaws?
+4. Did I cite a concrete location **and a verbatim quote** for every entry, and mark true gaps as `[MATERIAL GAP]` rather than inventing flaws?
 5. Did I resist writing any defense/answer in this stage (W3)?
 
 > Hand-off: the committed Weakness Ledger feeds `question-generation-rules.md` (turn weaknesses into questions) and `readiness-rubric.md` (score exposure). It is read-only from here on.

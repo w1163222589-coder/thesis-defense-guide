@@ -7,7 +7,7 @@
 ### 面向全门类的毕业答辩模拟与风险预判系统
 
 [![Skill](https://img.shields.io/badge/type-Agent%20Skill-blue.svg)](https://agentskills.io)
-[![Version](https://img.shields.io/badge/version-0.5.0-blue.svg)](CHANGELOG.md)
+[![Version](https://img.shields.io/badge/version-0.6.0-blue.svg)](CHANGELOG.md)
 [![Platform](https://img.shields.io/badge/platform-Codex%20%C2%B7%20Claude%20Code%20%C2%B7%20Cowork-lightgrey.svg)](#兼容性)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
 [![Output](https://img.shields.io/badge/output-Markdown%20%7C%20DOCX-orange.svg)](#输出)

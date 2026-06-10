@@ -8,8 +8,8 @@ Turns the committed **Weakness Ledger** into the questions a committee will actu
 
 ## IRON RULES
 
-- **IRON RULE Q1 — Weakness-first.** Every generated question must trace to a Weakness Ledger `id` (or to the universal backbone below). No free-floating "generic" questions presented as predictions.
-- **IRON RULE Q2 — Never drop a CRITICAL.** A CRITICAL weakness always becomes at least one question, even if no committee member obviously "owns" it.
+- **IRON RULE Q1 — Weakness-first.** Every generated question must trace to a Weakness Ledger `id` (or to the universal backbone / Concept Drill below). No free-floating "generic" questions presented as predictions.
+- **IRON RULE Q2 — Never drop a CRITICAL.** A CRITICAL weakness always becomes at least one question, even if no committee member obviously "owns" it. The same guarantee applies to `[REVIEWER]`-seeded weaknesses — official reviewers re-ask their own comments.
 - **IRON RULE Q3 — Backbone is evaluator-independent.** Produce the full weakness-derived question set assuming an unknown panel. Evaluator info adjusts ordering and adds a thin personalized layer; it never gates the backbone.
 - **IRON RULE Q4 — No fabricated personalization.** "Prof. X will ask about Y" requires an evidence-graded basis from evaluator research. Otherwise tag the question by evaluator *type*, not a named person.
 
@@ -52,11 +52,13 @@ When real evaluator research exists (evidence-graded High/Med/Low), bind specifi
 
 Score each question for the triage list:
 
-`danger = severity_weight + evaluator_likelihood + answer_fragility`
+`danger = severity_weight + evaluator_likelihood + answer_fragility + exposure_surface + reviewer_flag`
 
 - `severity_weight`: CRITICAL=3, MAJOR=2, MINOR=1.
 - `evaluator_likelihood`: +1 if a High/Med-confidence evaluator maps to it; backbone questions still count via their type's near-certainty (e.g., an application examiner on a deploy-feasibility gap).
 - `answer_fragility`: +1 if the student currently has no clean bounded answer (often true for CRITICAL).
+- `exposure_surface`: +1 if the attacked claim sits in the **title / abstract / conclusion / a headline slide** — committees fixate on what is most visible.
+- `reviewer_flag`: +1 if the weakness came from an official reviewer report (`[REVIEWER]`) — near-certain to be re-asked.
 
 Output the **Top-10 Most Dangerous Questions** (the spine of the day-of one-pager). These get the deepest answers and the most mock-defense reps.
 
@@ -86,6 +88,22 @@ Even with zero evaluator info and a thin thesis, always include these high-proba
 - "Why this method / source base / framework instead of the obvious alternative?" (dim 6)
 - "What would you do differently / next if you had more time?" (redirect target)
 - "Which of your claims is most contestable, and how do you defend it?"
+
+**Academic-norms set (near-universal since ~2025; coach honest, policy-compliant answers — never concealment):**
+- "Did you use AI tools in producing this thesis — where, and how is that consistent with the school's policy?"
+- "What is the relationship between your published papers and this thesis?" (大小论文关系 / overlap / authorship)
+- Originality / 查重 / citation-practice questions, if the school's process flags them.
+
+---
+
+## Concept Drill (必然题层 — fundamentals derived from the thesis itself)
+
+Dangerous questions are weakness-derived, but real panels also test **fundamentals**: they pick core terms off the title/abstract/methods and ask "define it / why this one". Fumbling a definition hurts more than conceding a limitation.
+
+1. Extract **15–20 core terms / quantities / methods** from the title, abstract, keywords, and chapter heads (the bound, the estimator, the named framework, the doctrine, the corpus — per paradigm).
+2. For each: a 1–2 sentence **spoken** definition + one sentence of "why this (over the obvious alternative)".
+3. By design this layer is exempt from Q1's trace rule (it is not a weakness prediction — it is insurance). Drill items that overlap a ledger weakness inherit its `W#` tag.
+4. Ships as the **appendix of the day-of one-pager**; it is generated from *this thesis's own vocabulary*, never from a static per-major question bank.
 
 ---
 

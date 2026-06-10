@@ -63,6 +63,18 @@ This mirrors review decision tiers but is framed as *exposure*, not *accept/reje
 
 ---
 
+## Anchor caps (mechanical; make the score reproducible)
+
+Model-scored rubrics drift between runs. These caps are absolute and override any per-dimension generosity. "Unmitigated" = no `W#-A#` downgrade ruling and no material revision.
+
+- ≥1 unmitigated CRITICAL → **overall ≤ 74** (never "Defense-ready").
+- ≥2 unmitigated CRITICAL → **overall ≤ 64**.
+- Each unmitigated CRITICAL → **D2 ≤ 55**.
+- No mock defense run yet → **D6 ≤ 65**, labeled "unrehearsed".
+- The **delta** may move only on: (a) revised materials, (b) mock-defense results, (c) ledger amendments. Drafting nicer answers does **not** move D1–D5 — preparation quality shows up through D6, not through grade inflation.
+
+---
+
 ## Output block (goes near the top of the day-of one-pager)
 
 ```
@@ -76,7 +88,8 @@ This mirrors review decision tiers but is framed as *exposure*, not *accept/reje
 ## Self-check
 1. Did I score before justifying (R1)?
 2. Does each dimension cite a ledger ID or section (R2)?
-3. Is the overall tier consistent with the number of CRITICAL weaknesses? (Several CRITICALs should not yield "Defense-ready".)
+3. Is the overall tier consistent with the number of unmitigated CRITICAL weaknesses? (Several CRITICALs should not yield "Defense-ready".)
 4. Did I frame the tier as *where to prepare*, not as a verdict on the student?
+5. Do all anchor caps hold? (Never ship a cap-violating score.)
 
 > Hand-off: the score + Top-3 exposures headline the day-of one-pager; the per-dimension lines feed the "weakness radar & calibration" tier of the output.
